@@ -11,6 +11,17 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'ChosunNm';
+  font-weight: normal;
+  font-style: normal;
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/ChosunNm/ChosunNm.eot');
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/ChosunNm/ChosunNm.eot?#iefix') format('embedded-opentype'),
+      url('https://cdn.jsdelivr.net/gh/webfontworld/ChosunNm/ChosunNm.woff2') format('woff2'),
+      url('https://cdn.jsdelivr.net/gh/webfontworld/ChosunNm/ChosunNm.woff') format('woff'),
+      url('https://cdn.jsdelivr.net/gh/webfontworld/ChosunNm/ChosunNm.ttf') format("truetype");
+  font-display: swap;
+}
 
 *{
   margin: 0;
@@ -42,10 +53,13 @@ a {
   text-align: center;
 }
 .articleTitle h4 {
+  margin-bottom: 0.8rem;
   font-size: var(--font-size-subTitle);
   color: var(--font-color-subTitle);
 }
 .articleTitle p {
+  padding: 0 5rem;
+  word-break: keep-all;
   font-size: var(--font-size-subDesc);
   color: var(--font-color-subDesc);
 }
@@ -74,7 +88,7 @@ a {
   /* === Font Size === */
   /* ex. 경복궁행사, 이달의 행사 */
   /* --font-size-subTitle: 45px; */
-  --font-size-subTitle: 4.5rem;
+  --font-size-subTitle: 4rem;
   /* sub title 아래 작은 글자 */
   /* --font-size-subDesc: 20px; */
   --font-size-subDesc: 2rem;
@@ -92,10 +106,32 @@ a {
 
 
   /* For Big Size Mobile & Tablet Device */
-  /* table max-width: 1040px */
+  /* table max-width: 1024px */
   /* mobile max-width: 768px */
   /* 폰트 크기와 박스 안쪽 여백(padding)값은 rem으로 주는거롤 합시다! */
 }
 
+@media all and (max-width: 1024px) {
+  html {
+    font-size: 55%;
+  }
+}
 
+@media all and (max-width: 768px) {
+  :root {
+    /* === Font Size === */
+  --font-size-subTitle: 3.5rem;
+  --font-size-subDesc: 1.8rem;
+  }
+  .articleTitle {
+    margin: 0 auto 4rem;
+  }
+}
 
+@media all and (max-width: 400px) {
+  html {
+    /* font-size: 50%; */
+    /* 미정.. 일단 55%로 작업 진행해보고 너무 크면 줄일게요 */
+    /* font-size: 55%; */
+  }
+}
